@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { UserButton } from "@clerk/nextjs";
 import type { Restaurant, Message } from "@/lib/data/restaurants";
 import { MessageList } from "./MessageList";
 import { MessageDetail } from "./MessageDetail";
@@ -62,6 +63,7 @@ export function InboxShell({ restaurant, allRestaurants }: Props) {
             current={restaurant.slug}
             restaurants={allRestaurants}
           />
+          <UserButton afterSignOutUrl="/sign-in" />
         </div>
       </header>
 
